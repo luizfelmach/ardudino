@@ -1,5 +1,8 @@
 #pragma once
 
+#include <dino.hpp>
+#include <objeto.hpp>
+
 enum StatusJogo {
     MENU = 0,
     JOGANDO = 1,
@@ -16,7 +19,9 @@ struct Jogo {
 
     Jogo();
 
+    void setup();
     void loop();
+    void atualiza();
     void renderizaMenuIniciarJogo();
     void renderizaPartida();
     void renderizaPerdeuJogo();
