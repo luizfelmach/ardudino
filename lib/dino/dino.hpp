@@ -1,13 +1,23 @@
 #pragma once
 
+#include <U8glib.h>
+
+enum StatusDino {
+    ANDA = 0,
+    PULOU = 1,
+    ABAIXOU = 2,
+    MORREU = 3
+};
+
 struct Dino {
     int x, y;
     int vx, vy;
     int accx, accy;
+    StatusDino status;
 
     Dino();
     void atualizar();
-    void pulaDino();
+    void pularDino();
     void abaixaDino();
-    void printarNaTela();
+    void printarNaTela(U8GLIB_SSD1306_128X64 tela);
 };

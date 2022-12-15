@@ -1,7 +1,8 @@
 #include <jogo.hpp>
 
 Jogo::Jogo() {
-    status = MENU;
+    tela = U8GLIB_SSD1306_128X64(U8G_I2C_OPT_NONE | U8G_I2C_OPT_DEV_0);
+    status = JOGANDO;
 }
 
 void Jogo::setup() {
@@ -31,7 +32,13 @@ void Jogo::renderizaMenuIniciarJogo() {
 }
 
 void Jogo::renderizaPartida() {
+    tela.firstPage();
 
+    do {
+        dino.printarNaTela(tela);
+    } while (tela.nextPage());
+
+    dino.atualizar();
 }
 
 void Jogo::renderizaPerdeuJogo() {

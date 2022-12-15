@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <jogo.hpp>
 
-Jogo jogo = new Jogo();
+Jogo jogo = Jogo();
 
 void setup(void) {
 	jogo.setup();

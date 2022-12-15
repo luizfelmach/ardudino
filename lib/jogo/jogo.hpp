@@ -1,5 +1,6 @@
 #pragma once
 
+#include <U8glib.h>
 #include <dino.hpp>
 #include <objeto.hpp>
 
@@ -10,7 +11,7 @@ enum StatusJogo {
 };
 
 struct Jogo {
-    
+    U8GLIB_SSD1306_128X64 tela;
     Dino dino;
     Objeto objetos[4];
     int pontuacao, velocidade;
