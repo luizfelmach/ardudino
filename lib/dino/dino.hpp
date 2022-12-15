@@ -14,6 +14,7 @@ struct Dino {
     int vx, vy;
     int accx, accy;
     StatusDino status;
+    int i;
 
     Dino();
     void atualizar();

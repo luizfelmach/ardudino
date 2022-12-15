@@ -1,3 +1,5 @@
+#pragma once
+
 #include <Arduino.h>
 
 // 'trex-up-1s', 22x23px
