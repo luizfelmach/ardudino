@@ -5,7 +5,12 @@ Jogo::Jogo() {
 }
 
 void Jogo::setup() {
-
+    Wire.begin();
+    Wire.beginTransmission(MPU);
+    Wire.write(0x6B);
+    Wire.write(0);
+    Wire.endTransmission(true);
+    Serial.begin(9600);
 }
 
 void Jogo::loop() {
