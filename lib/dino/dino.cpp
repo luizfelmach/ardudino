@@ -1,5 +1,5 @@
 #include <dino.hpp>
-#include <bitmaps.hpp>
+#include <dino_bitmap.hpp>
 
 Dino::Dino() {
     x = 10;
@@ -32,7 +32,7 @@ void Dino::abaixaDino() {
 
 void Dino::printarNaTela(U8GLIB_SSD1306_128X64 tela) {
     if (status == ANDA) {
-        tela.drawBitmapP(x, y, 3, 23, dino_allArray[i]);
+        tela.drawBitmapP(x, y, 3, 23, dino_andando_array[i]);
         i += 1;
         if (i > 2) {
             i = 0;
