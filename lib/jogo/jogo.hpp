@@ -3,6 +3,7 @@
 #include <U8glib.h>
 #include <dino.hpp>
 #include <objeto.hpp>
+#include <chao.hpp>
 
 enum StatusJogo {
     MENU = 0,
@@ -13,6 +14,7 @@ enum StatusJogo {
 struct Jogo {
     U8GLIB_SSD1306_128X64 tela;
     Dino dino;
+    Chao chao;
     Objeto objetos[4];
     int pontuacao, velocidade;
     StatusJogo status;

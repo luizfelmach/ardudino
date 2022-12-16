@@ -35,8 +35,14 @@ void Jogo::renderizaPartida() {
     tela.firstPage();
 
     do {
+        chao.printarNaTela(tela);
         dino.printarNaTela(tela);
     } while (tela.nextPage());
+
+
+    if (pontuacao % 20 == 0) {
+        dino.pularDino();
+    }
 
     dino.atualizar();
 }

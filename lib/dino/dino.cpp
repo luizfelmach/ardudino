@@ -3,11 +3,11 @@
 
 Dino::Dino() {
     x = 10;
-    y = 30;
+    y = 20;
     vx = 0;
     vy = 0;
     accx = 0;
-    accy = 0;
+    accy = 2;
     i = 0;
     status = ANDA;
 }
@@ -17,13 +17,18 @@ void Dino::atualizar() {
     vy += accy;
     x += vx;
     y += vy;
+
+    if (y >= 34) {
+        y = 34;
+        vy = 0;
+    }
 }
 
 void Dino::pularDino() {
     if (status == PULOU) {
         return;
     }
-    vy = -5;
+    vy = -12;
 }
 
 void Dino::abaixaDino() {
