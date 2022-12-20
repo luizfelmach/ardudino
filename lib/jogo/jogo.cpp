@@ -1,4 +1,5 @@
 #include <jogo.hpp>
+#include <constantes.hpp>
 
 Jogo::Jogo() {
     tela = U8GLIB_SSD1306_128X64(U8G_I2C_OPT_NONE | U8G_I2C_OPT_DEV_0);
@@ -48,17 +49,16 @@ void Jogo::renderizaPartida() {
 
 
    acel.detectaMovimento();
-   if(dino.status==ANDA){
+   
     if(acel.detectaPulou()){
         dino.pularDino();
-        dino.status=PULOU;
-    }else if(acel.detectaAbaixou()){
-        dino.abaixaDino();
-        dino.status=ABAIXOU;
+
     }
-   }
-   
-   
+    
+    if(acel.detectaAbaixou()){
+        dino.abaixaDino();
+    }
+
     dino.atualizar();
 }
 
