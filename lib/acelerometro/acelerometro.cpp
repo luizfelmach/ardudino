@@ -1,12 +1,7 @@
 #include <acelerometro.hpp>
+#include <constantes.hpp>
 #include <Wire.h>
 
-
-Acelerometro::Acelerometro(){
-    x=0;
-    y=0;
-    z=0; 
-}
 
 void Acelerometro::detectaMovimento(){
     x=(Wire.read()<<8|Wire.read());
@@ -33,9 +28,16 @@ bool Acelerometro:: detectaPulou(){
 }
 
 bool Acelerometro:: detectaParado(){
-    if(x<=-5 && x<=5){
+    if(x>-5 && x<5){
         Serial.println("ta paradao");
         return true;
     }
     return false;
 }
+void Acelerometro::atualizaDados(){
+    Wire.beginTransmission(MPU);
+    Wire.write(0x3B);
+    Wire.endTransmission(false);
+    Wire.requestFrom(MPU,14,true);
+}
+

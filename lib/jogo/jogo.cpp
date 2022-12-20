@@ -15,6 +15,7 @@ void Jogo::setup() {
 }
 
 void Jogo::loop() {
+    
     atualiza();
 
     if (status == MENU) {
@@ -29,6 +30,7 @@ void Jogo::loop() {
 }
 
 void Jogo::atualiza() {
+    acel.atualizaDados();
     pontuacao += 1;
 }
 
@@ -45,10 +47,18 @@ void Jogo::renderizaPartida() {
     } while (tela.nextPage());
 
 
-    if (pontuacao % 20 == 0) {
+   acel.detectaMovimento();
+   if(dino.status==ANDA){
+    if(acel.detectaPulou()){
         dino.pularDino();
+        dino.status=PULOU;
+    }else if(acel.detectaAbaixou()){
+        dino.abaixaDino();
+        dino.status=ABAIXOU;
     }
-
+   }
+   
+   
     dino.atualizar();
 }
 
