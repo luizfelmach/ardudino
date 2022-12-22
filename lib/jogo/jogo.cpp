@@ -7,6 +7,7 @@ Jogo::Jogo() {
 }
 
 void Jogo::setup() {
+    randomSeed(analogRead(A3));
     Wire.begin();
     Wire.beginTransmission(MPU);
     Wire.write(0x6B);
@@ -45,6 +46,7 @@ void Jogo::renderizaPartida() {
     do {
         chao.printarNaTela(tela);
         dino.printarNaTela(tela);
+        objetos.printarNaTela(tela);
     } while (tela.nextPage());
 
 

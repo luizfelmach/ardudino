@@ -1,3 +1,5 @@
+#pragma once
+#include <Arduino.h>
 // Fim do Jogo
 // 'game-over', 97x7px
 const unsigned char fim_game_over [] PROGMEM = {

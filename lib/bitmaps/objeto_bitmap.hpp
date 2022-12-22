@@ -1,3 +1,5 @@
+#pragma once
+#include <Arduino.h>
 // Cactos
 // 'cacti-big-big', 27x26px
 const unsigned char cacto_cacti_big_big [] PROGMEM = {

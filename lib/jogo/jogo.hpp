@@ -16,7 +16,7 @@ struct Jogo {
     U8GLIB_SSD1306_128X64 tela;
     Dino dino;
     Chao chao;
-    Objeto objetos[4];
+    Objeto objetos;
     int pontuacao, velocidade;
     StatusJogo status;
     Acelerometro acel;
