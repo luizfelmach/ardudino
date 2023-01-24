@@ -28,7 +28,7 @@ bool Acelerometro:: detectaPulou(){
 }
 
 bool Acelerometro:: detectaParado(){
-    if(x>-5 && x<5){
+    if(x>-3 && x<3){
         Serial.println("ta paradao");
         return true;
     }

@@ -28,7 +28,6 @@ void Dino::atualizar() {
         if (status != ABAIXOU) {
             status = ANDA;
         }
-
     }
 }
 
@@ -43,6 +42,10 @@ void Dino::pularDino() {
 void Dino::abaixaDino() {
     accy = 5;
     status = ABAIXOU;
+}
+
+void Dino::andaDino() {
+    status = ANDA;
 }
 
 void Dino::printarNaTela(U8GLIB_SSD1306_128X64 tela) {
