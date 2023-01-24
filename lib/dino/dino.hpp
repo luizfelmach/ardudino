@@ -20,5 +20,6 @@ struct Dino {
     void atualizar();
     void pularDino();
     void abaixaDino();
+    void andaDino();
     void printarNaTela(U8GLIB_SSD1306_128X64 tela);
 };

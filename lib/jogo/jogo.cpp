@@ -54,11 +54,10 @@ void Jogo::renderizaPartida() {
    
     if(acel.detectaPulou()){
         dino.pularDino();
-
-    }
-    
-    if(acel.detectaAbaixou()){
+    } else if(acel.detectaAbaixou()){
         dino.abaixaDino();
+    } else if (acel.detectaParado()){
+        dino.andaDino();
     }
 
     dino.atualizar();
