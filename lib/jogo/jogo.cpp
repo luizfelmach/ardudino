@@ -1,9 +1,13 @@
 #include <jogo.hpp>
 #include <constantes.hpp>
+#include <passaro.hpp>
+#include <cacto.hpp>
 
 Jogo::Jogo() {
     tela = U8GLIB_SSD1306_128X64(U8G_I2C_OPT_NONE | U8G_I2C_OPT_DEV_0);
     status = JOGANDO;
+    passaro = Passaro();
+    velocidade = 5;
 }
 
 void Jogo::setup() {
@@ -46,7 +50,8 @@ void Jogo::renderizaPartida() {
     do {
         chao.printarNaTela(tela);
         dino.printarNaTela(tela);
-        objetos.printarNaTela(tela);
+        cacto.printarNaTela(tela);
+        passaro.printarNaTela(tela);
     } while (tela.nextPage());
 
 
@@ -60,7 +65,9 @@ void Jogo::renderizaPartida() {
         dino.andaDino();
     }
 
+    chao.atualizar(velocidade);
     dino.atualizar();
+    passaro.atualizar(velocidade);
 }
 
 void Jogo::renderizaPerdeuJogo() {

@@ -17,9 +17,5 @@ void Chao::atualizar(int vx =  1) {
 void Chao::printarNaTela(U8GLIB_SSD1306_128X64 tela) {
     tela.drawBitmapP(x, 52, 8, 12, chao_array[i % 5]);
     tela.drawBitmapP(x+64, 52, 8, 12, chao_array[(i + 1) % 5]);
-    tela.drawBitmapP(x+128, 52, 8, 12, chao_array[(i + 2) % 5]);
-
-    atualizar();
-    
-    //i += 1;
+    tela.drawBitmapP(x+128, 52, 8, 12, chao_array[(i + 2) % 5]);    
 }

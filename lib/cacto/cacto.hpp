@@ -2,13 +2,14 @@
 #include <U8glib.h>
 #include <constantes.hpp>
 
-struct Objeto {
+struct Cacto {
     
-    int i;
     int x;
     int y;
-    int tipoObjeto;
-    Objeto();
+    int vx;
+    int vy;
+    int cacto;
+    Cacto();
     void atualizar(int vx);
     void printarNaTela(U8GLIB_SSD1306_128X64 tela);
 };

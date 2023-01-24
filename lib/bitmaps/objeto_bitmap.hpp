@@ -1,4 +1,6 @@
-#pragma once
+#ifndef OBJETO_BITMAP_HPP
+#define OBJETO_BITMAP_HPP
+
 #include <Arduino.h>
 // Cactos
 // 'cacti-big-big', 27x26px
@@ -71,3 +73,5 @@ const unsigned char* passaro_allArray[2] = {
 	passaro_pterodactyl_2
 };
 
+
+#endif
