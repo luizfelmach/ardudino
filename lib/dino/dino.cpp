@@ -50,14 +50,14 @@ void Dino::andaDino() {
 
 void Dino::printarNaTela(U8GLIB_SSD1306_128X64 tela) {
     if (status == ANDA) {
-        tela.drawBitmapP(x, y, 3, 20, dino_andando_array[i % 3]);
+        tela.drawBitmapP(x, y, 3, 23, dino_andando_array[i % 3]);
         i += 1;
         if (i > 2) {
             i = 0;
         }
     }
     if (status == PULOU) {
-        tela.drawBitmapP(x, y, 3, 23, dino_andando_2);
+        tela.drawBitmapP(x, y, 3, 23, dino_andando_1);
     }
     if (status == MORREU) {
         tela.drawBitmap(x,y,3,23,dino_morto_reto_array[i]);

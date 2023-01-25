@@ -4,6 +4,7 @@
 Jogo jogo = Jogo();
 
 void setup(void) {
+    randomSeed(analogRead(A0));
 	jogo.setup();
 }
 

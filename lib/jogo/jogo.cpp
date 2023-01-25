@@ -7,6 +7,7 @@ Jogo::Jogo() {
     tela = U8GLIB_SSD1306_128X64(U8G_I2C_OPT_NONE | U8G_I2C_OPT_DEV_0);
     status = JOGANDO;
     passaro = Passaro();
+    cacto = Cacto();
     velocidade = 5;
 }
 
@@ -51,7 +52,7 @@ void Jogo::renderizaPartida() {
         chao.printarNaTela(tela);
         dino.printarNaTela(tela);
         cacto.printarNaTela(tela);
-        passaro.printarNaTela(tela);
+        //passaro.printarNaTela(tela);
     } while (tela.nextPage());
 
 
@@ -68,6 +69,7 @@ void Jogo::renderizaPartida() {
     chao.atualizar(velocidade);
     dino.atualizar();
     passaro.atualizar(velocidade);
+    cacto.atualizar(velocidade);
 }
 
 void Jogo::renderizaPerdeuJogo() {

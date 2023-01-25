@@ -1,5 +1,5 @@
 #include <passaro.hpp>
-#include <objeto_bitmap.hpp>
+#include <passaro_bitmap.hpp>
 #include <Arduino.h>
 
 Passaro::Passaro() {
