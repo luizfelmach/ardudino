@@ -68,14 +68,16 @@ void Dino::printarNaTela(U8GLIB_SSD1306_128X64 tela) {
     }
 
     if (status == ABAIXOU) {
-        tela.drawBitmapP(x, y+8, 4, 15, dino_deitado_array[i]);
+        if (ii <= 10) {
+            tela.drawBitmapP(x, y+8, 4, 15, dino_deitado_array[0]);
+        } else {
+            tela.drawBitmapP(x, y+8, 4, 15, dino_deitado_array[1]);
+            if (ii >= 20) ii = 0;
+        }
         if (status == MORREU) {
-            tela.drawBitmap(x,y+8,4,15,dino_morto_deitado_array[i]);
+            tela.drawBitmap(x,y+8,4,15,dino_morto_deitado_array[0]);
         }
-        i += 1;
-        if (i > 1) {
-            i = 0;
-        }
+        ii += 1;
     }
 
 }
