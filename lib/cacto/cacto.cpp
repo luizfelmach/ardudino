@@ -15,6 +15,10 @@ void Cacto::atualizar(int vx=1){
     y += vy;
 }
 
+bool Cacto::passouDaTela(){
+    return x <= -20;
+}
+
 void Cacto::printarNaTela(U8GLIB_SSD1306_128X64 tela){    
     if (cacto == 0) {
         tela.drawBitmapP(x, y, 4, 26, cacto_allArray[0]);

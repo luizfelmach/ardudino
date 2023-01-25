@@ -22,6 +22,7 @@ struct Jogo {
     int pontuacao, velocidade;
     StatusJogo status;
     Acelerometro acel;
+    bool vezDoCacto;
 
 
     Jogo();

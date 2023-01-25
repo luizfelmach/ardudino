@@ -3,7 +3,7 @@
 #include <Arduino.h>
 
 Passaro::Passaro() {
-    x = 80;
+    x = 139;
     y = 32;
     vx = 1;
     vy = 0;
@@ -14,6 +14,11 @@ void Passaro::atualizar(int vx = 1) {
     x -= vx;
     y += vy;
 }
+
+bool Passaro::passouDaTela(){
+    return x <= -20;
+}
+
 
 
 void Passaro::printarNaTela(U8GLIB_SSD1306_128X64 tela) {

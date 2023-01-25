@@ -2,13 +2,15 @@
 #include <constantes.hpp>
 #include <passaro.hpp>
 #include <cacto.hpp>
+#include <fim_bitmap.hpp>
 
 Jogo::Jogo() {
     tela = U8GLIB_SSD1306_128X64(U8G_I2C_OPT_NONE | U8G_I2C_OPT_DEV_0);
     status = JOGANDO;
     passaro = Passaro();
     cacto = Cacto();
-    velocidade = 5;
+    velocidade = 8;
+    vezDoCacto = true;
 }
 
 void Jogo::setup() {
@@ -51,8 +53,12 @@ void Jogo::renderizaPartida() {
     do {
         chao.printarNaTela(tela);
         dino.printarNaTela(tela);
-        cacto.printarNaTela(tela);
-        //passaro.printarNaTela(tela);
+
+        if (vezDoCacto) {
+            cacto.printarNaTela(tela);
+        } else {
+            passaro.printarNaTela(tela);
+        }
     } while (tela.nextPage());
 
 
@@ -68,10 +74,30 @@ void Jogo::renderizaPartida() {
 
     chao.atualizar(velocidade);
     dino.atualizar();
-    passaro.atualizar(velocidade);
-    cacto.atualizar(velocidade);
+
+    if (vezDoCacto) {
+        if (cacto.passouDaTela()) {
+            vezDoCacto = !vezDoCacto;
+            passaro = Passaro();
+        } else {
+            cacto.atualizar(velocidade);
+        }
+    } else {
+        if (passaro.passouDaTela()) {
+            vezDoCacto = !vezDoCacto;
+            cacto = Cacto();
+        } else {
+            passaro.atualizar(velocidade);
+        }
+    }
+
 }
 
 void Jogo::renderizaPerdeuJogo() {
+    tela.firstPage();
 
+    do {
+        tela.drawBitmapP(15, 20, 13, 7, fim_game_over);
+        tela.drawBitmapP(55, 35, 3, 14, fim_restart_icon);
+    } while (tela.nextPage());
 }

@@ -11,5 +11,6 @@ struct Passaro {
     int vy;
     Passaro();
     void atualizar(int vx);
+    bool passouDaTela();
     void printarNaTela(U8GLIB_SSD1306_128X64 tela);
 };
