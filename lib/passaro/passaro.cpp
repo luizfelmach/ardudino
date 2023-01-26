@@ -4,7 +4,7 @@
 
 Passaro::Passaro() {
     x = 139;
-    y = 32;
+    y = 23;
     vx = 1;
     vy = 0;
     frame = 0;

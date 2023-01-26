@@ -75,7 +75,7 @@ void Dino::printarNaTela(U8GLIB_SSD1306_128X64 tela) {
             if (ii >= 20) ii = 0;
         }
         if (status == MORREU) {
-            tela.drawBitmap(x,y+8,4,15,dino_morto_deitado_array[0]);
+            tela.drawBitmap(x,y+8,4,8,dino_morto_deitado_array[0]);
         }
         ii += 1;
     }

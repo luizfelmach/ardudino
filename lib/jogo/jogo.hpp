@@ -33,4 +33,6 @@ struct Jogo {
     void renderizaMenuIniciarJogo();
     void renderizaPartida();
     void renderizaPerdeuJogo();
+    bool colisaoCacto();
+    bool colisaoPassaro();
 };
