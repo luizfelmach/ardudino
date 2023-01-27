@@ -35,6 +35,9 @@ void Dino::pularDino() {
     if (status == PULOU) {
         return;
     }
+    if (y != 34) {
+        return ;
+    }
     vy = -12;
     status = PULOU;
 }

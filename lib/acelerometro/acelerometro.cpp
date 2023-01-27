@@ -12,7 +12,7 @@ void Acelerometro::detectaMovimento(){
     z /= 1000;
 }
 bool Acelerometro:: detectaAbaixou(){
-    if(x<-5){
+    if(x>5){
         Serial.println("abaixou");
         return true;
     }
@@ -20,7 +20,7 @@ bool Acelerometro:: detectaAbaixou(){
 }
 
 bool Acelerometro:: detectaPulou(){
-    if(x>5){
+    if(x<-5){
         Serial.println("pulou");
         return true;
     }
