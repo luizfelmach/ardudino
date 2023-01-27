@@ -34,8 +34,8 @@ void Jogo::loop() {
         renderizaPartida();
     }
     if (status == PERDEU) {
+
         renderizaPerdeuJogo();
-        status=JOGANDO;
     }
 }
 
@@ -78,6 +78,8 @@ void Jogo::renderizaPartida() {
 
     if(colisaoCacto() or colisaoPassaro()){
         status=PERDEU;
+        dino.status = MORREU;
+        return;
     }
 
     if (vezDoCacto) {
@@ -102,6 +104,16 @@ void Jogo::renderizaPerdeuJogo() {
     tela.firstPage();
 
     do {
+
+        chao.printarNaTela(tela);
+        dino.printarNaTela(tela);
+
+        if (vezDoCacto) {
+            cacto.printarNaTela(tela);
+        } else {
+            passaro.printarNaTela(tela);
+        }
+        
         tela.drawBitmapP(15, 20, 13, 7, fim_game_over);
         tela.drawBitmapP(55, 35, 3, 14, fim_restart_icon);
     } while (tela.nextPage());
@@ -115,7 +127,7 @@ bool Jogo::colisaoCacto(){
 }
 
 bool Jogo::colisaoPassaro(){
-    if((dino.x<=passaro.x and dino.x>=passaro.x-15) and (dino.y<=passaro.y+10)){
+    if((dino.x<=passaro.x and dino.x>=passaro.x-20) and (dino.status != ABAIXOU)){
         return true;
     }
     return false;
