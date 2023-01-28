@@ -34,6 +34,6 @@ valor
 
 ## Autores
 
-- [@luizfelmach](https://github.com/luizfelmach)
-- [@gabriellybc](https://github.com/gabriellybc)
-- [@carpesfelipe](https://github.com/carpesfelipe)
+- **[@luizfelmach](https://github.com/luizfelmach)**
+- **[@gabriellybc](https://github.com/gabriellybc)**
+- **[@carpesfelipe](https://github.com/carpesfelipe)**
