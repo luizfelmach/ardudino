@@ -10,7 +10,7 @@
 
 ## Resumo
 
-valor
+O projeto consiste em um **mini emulador** de jogo controlado por um Arduino. O Arduino irá controlar uma tela Oled i2c no qual conterá um jogo baseado no Dino do navegador Chrome (T-Rex Running).
 
 ## Descrição
 
