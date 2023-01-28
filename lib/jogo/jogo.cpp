@@ -6,11 +6,15 @@
 
 Jogo::Jogo() {
     tela = U8GLIB_SSD1306_128X64(U8G_I2C_OPT_NONE | U8G_I2C_OPT_DEV_0);
-    status = JOGANDO;
+    status = MENU;
     passaro = Passaro();
     cacto = Cacto();
     velocidade = 8;
     vezDoCacto = true;
+    botaoVerde = inicializaBotao(PINO_BOTAO_VERDE);
+    botaoVermelho = inicializaBotao(PINO_BOTAO_VERMELHO);
+    ledVerde = inicializaLed(PINO_LED_VERDE);
+    ledVermelho = inicializaLed(PINO_LED_VERMELHO);
 }
 
 void Jogo::setup() {
@@ -45,7 +49,15 @@ void Jogo::atualiza() {
 }
 
 void Jogo::renderizaMenuIniciarJogo() {
-
+    botaoVerde.ativaInterrupcao();
+    tela.setFont(u8g_font_8x13B);
+    tela.drawStr( 15, 15, "Pressione o Botao Verde para iniciar o jogo");
+    while true {
+        if (botaoVerde.verificaEstado(ledVerde)) {
+            status = JOGANDO;
+            break;
+        }
+    }
 }
 
 void Jogo::renderizaPartida() {
@@ -101,8 +113,9 @@ void Jogo::renderizaPartida() {
 }
 
 void Jogo::renderizaPerdeuJogo() {
+    botaoVermelho.ativaInterrupcao();
+    tela.setFont(u8g_font_8x13B);
     tela.firstPage();
-
     do {
 
         chao.printarNaTela(tela);
@@ -116,6 +129,11 @@ void Jogo::renderizaPerdeuJogo() {
         
         tela.drawBitmapP(15, 20, 13, 7, fim_game_over);
         tela.drawBitmapP(55, 35, 3, 14, fim_restart_icon);
+        tela.drawStr( 15, 15, "Pressione o Botao Vermelho jogar novamente");
+        if (botaoVerde.verificaEstado(ledVermelho)) {
+            status = MENU;
+            break;
+        }
     } while (tela.nextPage());
 }
 

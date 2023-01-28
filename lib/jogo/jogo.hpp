@@ -6,6 +6,8 @@
 #include <chao.hpp>
 #include <acelerometro.hpp>
 #include <passaro.hpp>
+#include <botao.hpp>
+#include <led.hpp>
 
 enum StatusJogo {
     MENU = 0,
@@ -23,6 +25,10 @@ struct Jogo {
     StatusJogo status;
     Acelerometro acel;
     bool vezDoCacto;
+    Botao botaoVerde;
+    Botao botaoVermelho;
+    Led ledVerde;
+    Led ledVermelho;
 
 
     Jogo();
