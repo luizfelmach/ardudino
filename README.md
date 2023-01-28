@@ -30,7 +30,10 @@ valor
 
 ## Circuito
 
-valor
+<p align="center">
+  <img width="500px" src="./assets/schematic.png" />
+</p>
+
 
 ## Autores
 
