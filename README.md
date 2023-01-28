@@ -26,7 +26,12 @@ valor
 
 ## Componentes
 
-valor
+- Display i2c (Tela Oled 1.3’’ 128x64)
+- Arduino Uno
+- Push button
+- Leds
+- Resistores
+- Acelerômetro (MPU)
 
 ## Circuito
 
