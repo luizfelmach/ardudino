@@ -33,7 +33,19 @@ valor
 
 ## Como compilar
 
-valor
+O projeto foi inteiramente construído utilizando [PlatformIO](https://platformio.org/). Para utilizar faça [download](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) da extensão para o vscode. O PlaformIO, a partir do arquivo de configuração ***platformio.ini*** faz a instalação das dependências necessárias para compilar. 
+
+```toml
+; platformio.ini
+
+[env:uno]
+platform = atmelavr
+board = uno
+framework = arduino
+lib_deps = olikraus/U8glib@^1.19.1 ; dependência necessária
+```
+
+Com tudo configurado, basta clicar no botão **build** do platformIO e fazer o **upload** para o Arduino.
 
 ## Detalhes
 
