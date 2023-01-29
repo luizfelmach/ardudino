@@ -33,7 +33,7 @@ valor
 
 ## Como compilar
 
-O projeto foi inteiramente construído utilizando [PlatformIO](https://platformio.org/). Para utilizar faça [download](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) da extensão para o vscode. O PlaformIO, a partir do arquivo de configuração ***platformio.ini*** faz a instalação das dependências necessárias para compilar. 
+O projeto foi inteiramente construído utilizando [PlatformIO](https://platformio.org/). Para utilizar, faça [download](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) da extensão para o vscode. O PlaformIO, a partir do arquivo de configuração ***platformio.ini*** faz a instalação das dependências necessárias para compilar. 
 
 ```toml
 ; platformio.ini
