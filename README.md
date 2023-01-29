@@ -1,4 +1,4 @@
-<p align="center
+<p align="center>
   <a href="https://github.com/luizfelmach/ardudino">
     <img width="200px" alt="ardudino" src="./assets/banner.png">
   </a>
