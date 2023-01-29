@@ -1,6 +1,6 @@
 <p align="center">
-  <a width="200px" href="https://github.com/luizfelmach/ardudino">
-    <img alt="ardudino" src="./assets/banner.png">
+  <a href="https://github.com/luizfelmach/ardudino">
+    <img width="200px" alt="ardudino" src="./assets/banner.png">
   </a>
 </p>
 
