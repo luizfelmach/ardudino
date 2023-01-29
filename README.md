@@ -39,10 +39,10 @@ O projeto foi inteiramente construído utilizando [PlatformIO](https://platformi
 ; platformio.ini
 
 [env:uno]
-platform = atmelavr
-board = uno
-framework = arduino
-lib_deps = olikraus/U8glib@^1.19.1 ; dependência necessária
+platform = "atmelavr"
+board = "uno"
+framework = "arduino"
+lib_deps = "olikraus/U8glib@^1.19.1" ; dependência necessária
 ```
 
 Com tudo configurado, basta clicar no botão **build** do platformIO e fazer o **upload** para o Arduino.
