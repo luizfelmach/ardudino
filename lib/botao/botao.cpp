@@ -8,6 +8,7 @@ void Botao::inicializaBotao(const int p) {
 
 void Botao::ativaInterrupcao() {
     attachInterrupt(digitalPinToInterrupt(this->pino), apertou, RISING);
+    this->estado = 0;
 }
 
 void Botao::desativaInterrupcao() {
