@@ -11,6 +11,7 @@ struct Acelerometro {
     void atualizaDados();
     void detectaMovimento();
     bool detectaAbaixou();
+    bool detectaRestart();
     bool detectaPulou();
     bool detectaParado();
 };

@@ -27,6 +27,15 @@ bool Acelerometro:: detectaPulou(){
     return false;
 }
 
+bool Acelerometro::detectaRestart(){
+    if(y>5){
+        Serial.println("restart");
+        return true;
+    }
+    return false;
+}
+
+
 bool Acelerometro:: detectaParado(){
     if(x>-3 && x<3){
         Serial.println("ta paradao");

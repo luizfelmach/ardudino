@@ -10,6 +10,8 @@ Jogo::Jogo() {
     passaro = Passaro();
     cacto = Cacto();
     velocidade = 8;
+    pontuacao = 0;
+
     vezDoCacto = true;
 }
 
@@ -51,6 +53,11 @@ void Jogo::renderizaMenuIniciarJogo() {
 void Jogo::renderizaPartida() {
     tela.firstPage();
 
+    char s_str[20];
+    itoa(pontuacao, s_str, 10);
+    tela.setFont(u8g_font_04b_24);
+
+    
     do {
         chao.printarNaTela(tela);
         dino.printarNaTela(tela);
@@ -60,6 +67,8 @@ void Jogo::renderizaPartida() {
         } else {
             passaro.printarNaTela(tela);
         }
+
+        tela.drawStr(5, 10, s_str);
     } while (tela.nextPage());
 
 
@@ -117,6 +126,12 @@ void Jogo::renderizaPerdeuJogo() {
         tela.drawBitmapP(15, 20, 13, 7, fim_game_over);
         tela.drawBitmapP(55, 35, 3, 14, fim_restart_icon);
     } while (tela.nextPage());
+
+   acel.detectaMovimento();
+
+    if (acel.detectaRestart()) {
+        *this = Jogo();
+    }
 }
 
 bool Jogo::colisaoCacto(){
