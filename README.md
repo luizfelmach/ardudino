@@ -55,6 +55,7 @@ Com tudo configurado, basta clicar no botão **build** do platformIO e fazer o *
 
 Para desenvolver esse projeto, ele foi modurarizado da seguinte forma:
 
+```
 |--lib
 |  |
 |  |--acelerometro
@@ -91,7 +92,7 @@ Para desenvolver esse projeto, ele foi modurarizado da seguinte forma:
 |- platformio.ini
 |--src
    |- main.c
-
+```
 
 ## Componentes
 
@@ -109,7 +110,7 @@ Para desenvolver esse projeto, ele foi modurarizado da seguinte forma:
 
 <div align="center">
 
-  [![ardudino](https://img.youtube.com/vi/ardudino/0.jpg)](https://youtu.be/EXHThd38dGE)
+  [![ardudino](https://img.youtube.com/vi/EXHThd38dGE/0.jpg)](https://youtu.be/EXHThd38dGE)
 
 </div>
 
